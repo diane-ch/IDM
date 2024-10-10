@@ -29,5 +29,6 @@ hour +=1
 let time ="it is " + hour;
 console.log(time);
 
-time = 'hello it is ${hour}' // ne marche pas pcq ce n'est pas des guillements normales, mais des "backticks" (pas sur azerty)
+time = `hello it is ${hour}` // backticks 
 console.log(time);
+
