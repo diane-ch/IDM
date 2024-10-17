@@ -1,0 +1,23 @@
+[
+    {
+        "city": "Barcelona",
+        "country": "Spain",
+        "img_path": "barcelona.jpg"
+    },
+    {
+        "city": "London",
+        "country": "England",
+        "img_path": "london.jpg" 
+    },
+    {
+        "city": "New-York",
+        "country": "USA",
+        "img_path":"new-york.jpg"
+    },
+    {
+        "city": "Paris",
+        "country": "France",
+        "img_path":"paris.jpg"
+    }
+
+]
