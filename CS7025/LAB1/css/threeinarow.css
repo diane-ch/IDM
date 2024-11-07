@@ -1,5 +1,53 @@
-#table{
-    border-style: solid;
-    border-color: black;
+body {
+    background-color: pink;
+    color: white;
 }
 
+td {
+    border: 4px solid;
+    /*collapse border to avoid a double line*/
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    font-size: 3.5rem;
+    /*make bigger*/
+    font-weight: 600;
+    /*make bold*/
+    text-align: center;
+    /*center*/
+}
+
+table,
+p {
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    text-align: center;
+}
+
+button {
+    display: block;
+    /* Make the button a block-level element */
+    margin: 20px auto;
+    /* Center horizontally using margin */
+    font-size: 2rem;
+    background-color: rgb(222, 91, 178);
+    border: 2px rgb(222, 91, 178) solid;
+    border-radius: 10%;
+    color: white;
+}
+
+button:hover{
+    border: 3px white solid;
+    cursor: pointer;
+}
+
+h1 {
+    color: red;
+    font-family: 'Trebuchet MS';
+    text-align: center;
+}
