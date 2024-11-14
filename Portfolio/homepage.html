@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Diane Chounlamountry</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+
+<body>
+    <script src="js/script.js"></script>
+
+    <!-- Header of the site. It is always visible. -->
+    <div class="header">
+        <a href="#" ><img src="images/logo.svg" alt="This my logo, it's my initials DC." class="logo"></a>
+
+        <div class="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="projects_page.html">Projects</a>
+            <a href="education_page.html" >Education</a>
+            <a href="contact_page.html" >Contact</a>
+        </div>
+    </div>
+
+    <!-- First section of the homepage divided in two :
+        - Left side : short introduction with my name. 
+        - Right side : picture of me -->
+    <div id="intro">
+
+        <!-- Left side : Short introduction -->
+        <div class="intro-text">            
+            <h1>Diane <br>Chounlamountry</h1>            
+            <p>Welcome to my porfolio !<br> Programming, modelling or design, explore my page to find out more about me and my skills...</p> 
+            <div class="btn-box">
+                <!-- This button links to the second section of the homepage, which is also available by just scrolling down. -->
+                <a href="#about" id="btn1">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Right side : Picture of me -->
+        <div class="intro-image">
+            <img src="images/myphoto.jpg" alt="A picture of me">
+        </div>
+
+    </div>
+
+
+    <!-- Second section of the homepage : "about me" section and introduction to the other pages of the site (Projects and Education)-->
+    <div id="about">
+
+        <!-- "About me" section -->
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>My name is Diane Chounlamountry and I am a postgraduate student at Trinity College Dublin.
+                I study the MSc. Interactive Digital Media where I'm learning how to develop digital content.
+                My bachelor in Science of Engineering from Ecole Centrale de Nantes in France has given me technical 
+                and programming skills that I continue improving this year, with an additional focus on UI/UX design and web authoring.
+            </p>
+        </div>
+
+        <!-- Introduction to the other pages of the site -->
+        <div class="additional-infos">
+
+            <!-- Introduction to my projects -->
+            <div class="additional-info" id="info-projects">
+                <h2>My Projects</h2>
+                <p> My projects showcase the skills I have acquired throughout the last years.
+                    I have a lot of experience in programming with Python, both in school and in 
+                    a professional environment.                    
+                </p>
+                <div class="btn-box">
+                    <!-- This button links to the page "Projects" -->
+                    <a href="projects_page.html" id="btn-projects">See My Projects</a>
+                </div>  
+            </div>
+
+            <!-- Introduction to my education-->
+            <div class="additional-info" id="info-education">
+                <h2>My Education</h2>
+                <p>I'm currently doing a double-diploma with Trinity College Dublin and Ecole Centrale de Nantes. 
+                    In 2026, I will hold two masters in <span>Science of Engineering</span> and in <span>Interactive Digital Media</span>.
+                    <br>An overview of my entire education is available, click on the button below to check it out!
+                </p>
+                <div class="btn-box">
+                    <!-- This button links to the page "Education" -->
+                    <a href="education_page.html" id="btn-education">See My Education</a>
+                </div> 
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer containing contact details-->
+    <div id="footer">
+
+        <div class="contact-details">
+            <h4>Contact Details</h4>
+            <p>diane.chounlamountry@gmail.com</p>
+            <p>+33 782359271</p>
+        </div>
+
+        <div class="contact-socials">
+            <!-- Link to the page "Contact" of the site -->
+            <a href="contact_page.html">Contact Me</a> 
+
+            <!-- Link to my LinkedIn page (it opens another tab) -->
+            <a href="https://www.linkedin.com/in/diane-chounlamountry-a78510297/" target="_blank"><img src="images/linkedin.png" alt="Linkedin logo"></a>
+        </div>
+    </div>
+
+</body>
+
+</html>

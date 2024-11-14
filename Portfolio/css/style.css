@@ -1,0 +1,482 @@
+/* General characteristics of the site */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+/* ################# HEADER ################## 
+        (used for every page of the site) */
+
+.header {
+    position: fixed; /* Header stays on top of the screen even when the user scrolls*/
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 70px;
+    padding: 10px 10%; 
+    background-color: #1B187D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* To make sure the header is always on top (always visible)*/
+}
+
+.logo {
+    width: 40px;
+}
+
+.navbar {
+    font-size: 17px;
+    display: flex;
+    flex-wrap: wrap;    /* To make sure the section links are still visible when the window is reduced. */
+    justify-content: flex-end;
+}
+
+.navbar a{
+    color: white;
+    margin-left: 3rem; /* Defines the space between the names of the different section*/
+    border-bottom: 3px solid transparent; /* Bottom border for underline effect. Transparent unless page is active or name is hovered */
+    transition: 0.3s ease; /* For a smooth effect*/
+}
+
+/* The name of the active page is blue. The name of a section turns blue when the mouse hovers over it*/
+.navbar a:hover,
+.navbar a.active {
+    color: #8FBDD9;
+    border-bottom: 3px solid #8FBDD9; 
+}
+
+/* ##################### END OF HEADER ######################### */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~ HOME PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* First section of the home page */
+
+#intro {
+    background-color: white;
+    height: 100vh;  /* So only this section is visible when the user does not scroll */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    padding: 0 10%;
+    gap: 7rem; 
+}
+
+.intro-image img{
+    width: 250px;
+    height: 250px;
+    border-radius: 40%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+    max-width: 600px;   /* I could use percentage to make it more responsive, but this is the width necessary for my last name. So I prefer this section to be fixed even when the window is reduced*/
+    max-height: 400px;
+    background-color: #8FBDD9;
+    margin-top: 50px;
+    border-radius: 15%;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.intro-text h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    color: #1B187D;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.intro-text p {
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.btn-box {
+    background-color: rgb(238, 160, 15);
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+.btn-box a{
+    color: white;
+    display: block;
+}
+
+.btn-box:hover{
+    font-weight: bold;
+    cursor: pointer; /* When the cursor hovers over the button, it becomes a pointer*/
+}
+
+.btn-box:hover a{
+    color: #cd7305;
+}
+
+
+/* Second section of the home page */
+
+#about{
+    min-height: 100vh;  /* The use of min-height instead of height prevents the about section to overlap on the rest when the window is reduced. */
+    background-color: #8FBDD9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me {
+    max-width: 70%;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.about-me h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.about-me p {
+    color: #555;
+    text-align: justify;
+}
+
+.additional-infos {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 80%;
+    position: relative;
+}
+
+.additional-info{
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    }
+
+.additional-info h2{
+    margin-bottom: 1rem;
+}
+
+.additional-info p{
+    color: #555;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background-color: #07053D;
+    color: white;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+/* Contact details */
+.contact-details h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.contact-details p {
+    margin: 0.3rem 0;
+}
+
+/* Social links */
+.contact-socials a {
+    color: white;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.contact-socials a:hover{
+    color: orange;
+}
+
+.contact-socials img{
+    width: 24px;
+    height: 24px;
+    vertical-align: middle; /* To have the middle of the logo aligned with "contact me"*/
+}
+
+.contact-socials img:hover{
+    outline: 2px solid orange;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~ PROJECTS PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.projects-intro{
+    margin-left: 10%;
+    margin-right: 10%;    
+    padding-top: 100px ; /* knowing the header is 70px high */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.projects-intro p{
+    padding-top: 10px;
+    text-align: justify ;
+}
+
+.projects-topic{
+    width: 80%;
+    min-height: 50vh;   /* When full screen */
+    height: auto;   /* If window is reduced, the container adapts */
+    margin: auto;
+    margin-top: 40px;
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #8FBDD9;
+    flex-wrap: wrap;
+}
+
+.topic{
+    border-style: solid;
+    width: 30vh;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #07053D;
+    color: white;
+    
+}
+
+.topic:hover{
+    color: #ffa500;
+    font-size: 18px;
+}
+
+/* ~~~~~~~~~~~ PROJECTS SUB-PAGES~~~~~~~~~~~ */
+
+.project-content{
+    padding: 0% 10%;
+    padding-top: 100px ; 
+    background-color: white;
+    color: black;
+    text-align: justify;
+}
+
+
+.project-content .nav-other-topics{
+    float: right;   /* Navigation between the three domains is placed on the right*/
+}
+
+/* Features for the block of each project */
+.project-content .a-project{
+    margin: 20px;
+    padding: 20px 20px;
+    border-style: solid;
+    background-color: #ffa60050;
+}
+
+.project-content .a-project .project-resume{
+    padding: 20px 0px;
+}
+.project-content .a-project .project-resume ul{
+    padding: 0 30px;
+}
+
+/* Size of the images */
+.project-content .a-project .project-illustration img{
+    height: 200px;
+    width: auto;
+}
+
+.project-content .a-project .project-illustration ul li{
+    padding: 0 30px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~ EDUCATION PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.timeline {
+    width: 25%;
+    min-width: 150px;
+    max-width: 220px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 15px;
+    position: fixed;
+    top: 100px;     /* Takes into account the header */
+    bottom: 20px;
+    left: 20px;
+    overflow-y: auto;   /* Ability to scroll if the text goes beyond the block container */
+    color: black;
+}
+
+.timeline ul {
+    list-style-type: none;  /* No bullet points */
+}
+
+.timeline ul li {
+    margin: 20px 0;
+}
+
+.timeline ul li a {
+    color: black;
+}
+
+/* When hovered, the font changes color and weight*/
+.timeline ul li a:hover{
+    font-weight: bold;
+    color: orange;
+}
+
+.school-content {
+    margin-top: 100px;  /* Takes into account the header */
+    margin-left: 240px; /* Takes into accound the timeline bar */
+}
+
+.school {
+    width: 100%;
+    max-width: 800px; 
+    height: 450px;
+    margin: 0px auto 50px ; 
+    border-radius: 50px; 
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); 
+    background-color: #8FBDD9;
+    padding: 20px;
+    overflow-y: auto;   /* Ability to scroll if the text goes beyond the block container */
+    scroll-margin-top: 100px;   /* Leaves space above a section. So when you click on a school in the timeline,
+                                only the selected bubble is visible. */
+}
+
+.school-logo img {
+    float: left;
+    height: 100px;  /* Set height to be similar to ".main-info" section */
+    width: auto;    /* Sets the correct width for a height of 100px */
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+.main-info {
+    min-height: 100px;  /* Set height to be similar to ".school-logo img" section. Use of "min-height" prevents the text to go beyond the block when the window is reduced.*/
+    width: auto;    /* Sets the correct width for a height of 100px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.school .recap{
+    margin: 20px 0px;
+    text-align: justify;
+}
+
+.school .skills{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.school .skills ul{
+    list-style-type: circle;
+    padding: 0 20px;
+}
+
+/* Less content for this school, so the bubble is smaller than the other ones */
+#lacom{
+    margin-top: 150px;
+    margin-bottom: 150px;
+    height: 300px;
+}
+
+/* Link to the school website turns orange when it is hovered */
+.school-website a:hover{
+    color: orange;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CONTACT PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.contact-me{
+    background-color:#8FBDD9;
+    max-width: 400px;
+    width: 90%;
+    margin: 90px auto;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-style: solid;
+    padding: 20px 0;
+    border-radius: 15%;
+    border-color: #1B187D;
+}
+
+.contact-me h1{
+    color: #1B187D;
+    margin-bottom: 10px;
+}
+
+.contact-me form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 70%;
+}
+
+.contact-me label {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    color: #1B187D;
+}
+
+.contact-me input{
+    padding: 2px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.contact-me button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #1B187D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-me button:hover {
+    background-color: orange;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

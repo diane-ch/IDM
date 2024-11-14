@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Diane Chounlamountry</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <!-- Header of the site. It is always visible. -->
+    <div class="header">
+        <a href="homepage.html" ><img src="images/logo.svg" alt="This my logo, it's my initials DC." class="logo"></a>
+
+        <div class="navbar">
+            <a href="homepage.html">Home</a>
+            <a href="projects_page.html">Projects</a>
+            <a href="education_page.html">Education</a>
+            <a href="contact_page.html" class="active">Contact</a>
+        </div>
+    </div>
+
+    <!-- Container for the form -->
+    <div class="contact-me">
+        <h1>Contact Me</h1> 
+
+        <form> 
+            <!-- - placeholder="..." to have "..." in the input sections automatically
+                 - "required" means that the form cannot be submitted unless the corresponding input is completed (all of them, here)-->
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" placeholder=" ..." required><br>
+
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" placeholder=" ..." required><br>
+
+            <!-- Use of the type "email" : needs to have the correct form of an email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder=" ..." required><br>
+
+            <!-- A specific pattern is required for the phone number, it is indicated with the placeholder. -->
+            <label for="phone-nb">Phone number:</label>
+            <input type="tel" id="phone-nb" name="phone-nb" placeholder=" ... (+00 123456789)" pattern="^\+[\d]{2} [\d]{9}$" required><br>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder=" ..." required><br>
+
+            <!-- Using "textarea" instead of "input" to be able to modify the size of the input area-->
+            <label for="message">Your message:</label>
+            <textarea id="message" name="message" placeholder=" ..." required></textarea> 
+
+            <button type="submit">Send Message</button>
+        </form>
+        
+    </div>
+
+    
+</body>
+</html>
