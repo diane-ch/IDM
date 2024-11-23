@@ -15,8 +15,8 @@
     top: 0; 
     left: 0;
     width: 100%;
-    height: 70px;
-    padding: 10px 10%; 
+    height: 3.5em;
+    padding: 0.5em 10%; 
     background-color: #1B187D;
     display: flex;
     justify-content: space-between;
@@ -25,11 +25,11 @@
 }
 
 .logo {
-    width: 40px;
+    width: 2.4em;
 }
 
 .navbar {
-    font-size: 17px;
+    font-size: 1.1em;
     display: flex;
     flex-wrap: wrap;    /* To make sure the section links are still visible when the window is reduced. */
     justify-content: flex-end;
@@ -38,7 +38,7 @@
 .navbar a{
     color: white;
     margin-left: 3rem; /* Defines the space between the names of the different section*/
-    border-bottom: 3px solid transparent; /* Bottom border for underline effect. Transparent unless page is active or name is hovered */
+    border-bottom: 0.2rem solid transparent; /* Bottom border for underline effect. Transparent unless page is active or name is hovered */
     transition: 0.3s ease; /* For a smooth effect*/
 }
 
@@ -46,7 +46,7 @@
 .navbar a:hover,
 .navbar a.active {
     color: #8FBDD9;
-    border-bottom: 3px solid #8FBDD9; 
+    border-bottom: 0.2rem solid #8FBDD9; 
 }
 
 /* ##################### END OF HEADER ######################### */
@@ -67,19 +67,19 @@
 }
 
 .intro-image img{
-    width: 250px;
-    height: 250px;
+    width: 17em;
+    height: 17em;
     border-radius: 40%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
 }
 
 .intro-text {
-    max-width: 600px;   /* I could use percentage to make it more responsive, but this is the width necessary for my last name. So I prefer this section to be fixed even when the window is reduced*/
-    max-height: 400px;
+    max-width: 36em;  
+    max-height: 22em;
     background-color: #8FBDD9;
-    margin-top: 50px;
+    margin-top: 3em;
     border-radius: 15%;
-    padding: 30px 30px;
+    padding: 2em 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,8 +101,8 @@
 
 .btn-box {
     background-color: rgb(238, 160, 15);
-    padding: 12px 24px;
-    border-radius: 8px;
+    padding: 0.75em 1.5em;
+    border-radius: 0.5em;
 }
 
 .btn-box a{
@@ -158,8 +158,8 @@
 .additional-info{
     padding: 1rem 2rem;
     background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.1);
     text-align: center;
     position: relative;
     }
@@ -210,13 +210,13 @@
 }
 
 .contact-socials img{
-    width: 24px;
-    height: 24px;
+    width: 1.5em;
+    height: 1.5em;
     vertical-align: middle; /* To have the middle of the logo aligned with "contact me"*/
 }
 
 .contact-socials img:hover{
-    outline: 2px solid orange;
+    outline: 0.13em solid orange;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -228,7 +228,7 @@
 .projects-intro{
     margin-left: 10%;
     margin-right: 10%;    
-    padding-top: 100px ; /* knowing the header is 70px high */
+    padding-top: 6.5em ; /* knowing the header is 70px high */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,7 +236,7 @@
 }
 
 .projects-intro p{
-    padding-top: 10px;
+    padding-top: 1em;
     text-align: justify ;
 }
 
@@ -245,8 +245,8 @@
     min-height: 50vh;   /* When full screen */
     height: auto;   /* If window is reduced, the container adapts */
     margin: auto;
-    margin-top: 40px;
-    padding: 0px 50px;
+    margin-top: 2.5em;
+    padding: 0 3em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -268,7 +268,7 @@
 
 .topic:hover{
     color: #ffa500;
-    font-size: 18px;
+    font-size: 1.1em;
 }
 
 /* ~~~~~~~~~~~ PROJECTS SUB-PAGES~~~~~~~~~~~ */
@@ -320,15 +320,15 @@
 
 .timeline {
     width: 25%;
-    min-width: 150px;
-    max-width: 220px;
+    min-width: 10em;
+    max-width: 13em;
     background-color: #f3f3f3;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 1.25em;
+    border-radius: 1em;
     position: fixed;
-    top: 100px;     /* Takes into account the header */
-    bottom: 20px;
-    left: 20px;
+    top: 6em;     /* Takes into account the header */
+    bottom: 1.25em;
+    left: 1.25em;
     overflow-y: auto;   /* Ability to scroll if the text goes beyond the block container */
     color: black;
 }
@@ -338,7 +338,7 @@
 }
 
 .timeline ul li {
-    margin: 20px 0;
+    margin: 1.25em 0;
 }
 
 .timeline ul li a {
@@ -352,50 +352,50 @@
 }
 
 .school-content {
-    margin-top: 100px;  /* Takes into account the header */
-    margin-left: 240px; /* Takes into accound the timeline bar */
+    margin-top: 6em;  /* Takes into account the header */
+    margin-left: 14.2em; /* Takes into accound the timeline bar */
 }
 
 .school {
     width: 100%;
-    max-width: 800px; 
-    height: 450px;
-    margin: 0px auto 50px ; 
-    border-radius: 50px; 
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); 
+    max-width: 50em; 
+    height: 28em;
+    margin: 0 auto 3.1em ; 
+    border-radius: 3.1em; 
+    box-shadow: 0 0.25em 1.25em rgba(0, 0, 0, 0.2); 
     background-color: #8FBDD9;
-    padding: 20px;
+    padding: 1.25em;
     overflow-y: auto;   /* Ability to scroll if the text goes beyond the block container */
-    scroll-margin-top: 100px;   /* Leaves space above a section. So when you click on a school in the timeline,
+    scroll-margin-top: 6em;   /* Leaves space above a section. So when you click on a school in the timeline,
                                 only the selected bubble is visible. */
 }
 
 .school-logo img {
     float: left;
-    height: 100px;  /* Set height to be similar to ".main-info" section */
-    width: auto;    /* Sets the correct width for a height of 100px */
+    height: 6em;  /* Set height to be similar to ".main-info" section */
+    width: auto;    /* Sets the correct width for a height of 6em */
     border-style: solid;
     border-color: black;
-    border-width: 2px;
+    border-width: 0.13em;
 }
 
 .main-info {
-    min-height: 100px;  /* Set height to be similar to ".school-logo img" section. Use of "min-height" prevents the text to go beyond the block when the window is reduced.*/
-    width: auto;    /* Sets the correct width for a height of 100px */
+    min-height: 6em;  /* Set height to be similar to ".school-logo img" section. Use of "min-height" prevents the text to go beyond the block when the window is reduced.*/
+    width: auto;    /* Sets the correct width for a height of 6em */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 1.25em;
 }
 
 .school .recap{
-    margin: 20px 0px;
+    margin: 1.25em 0;
     text-align: justify;
 }
 
 .school .skills{
-    padding: 20px 0;
+    padding: 1.25em 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -403,14 +403,14 @@
 
 .school .skills ul{
     list-style-type: circle;
-    padding: 0 20px;
+    padding: 0 1.25em;
 }
 
 /* Less content for this school, so the bubble is smaller than the other ones */
 #lacom{
-    margin-top: 150px;
-    margin-bottom: 150px;
-    height: 300px;
+    margin-top: 10em;
+    margin-bottom: 10em;
+    height: 20em;
 }
 
 /* Link to the school website turns orange when it is hovered */
@@ -427,22 +427,22 @@
 
 .contact-me{
     background-color:#8FBDD9;
-    max-width: 400px;
+    max-width: 23em;
     width: 90%;
-    margin: 90px auto;    
+    margin: 5.5em auto;    
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border-style: solid;
-    padding: 20px 0;
+    padding: 1.25em 0;
     border-radius: 15%;
     border-color: #1B187D;
 }
 
 .contact-me h1{
     color: #1B187D;
-    margin-bottom: 10px;
+    margin-bottom: 0.3em;
 }
 
 .contact-me form {
@@ -454,24 +454,24 @@
 
 .contact-me label {
     text-align: left;
-    margin-top: 10px;
-    margin-bottom: 2px;
+    margin-top: 0.6em;
+    margin-bottom: 0.13em;
     color: #1B187D;
 }
 
 .contact-me input{
-    padding: 2px;
+    padding: 0.13em;
     width: 100%;
-    max-width: 300px;
+    max-width: 19em;
 }
 
 .contact-me button {
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 0.75em;
+    padding: 0.75em;
     background-color: #1B187D;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.4em;
     cursor: pointer;
 }
 
