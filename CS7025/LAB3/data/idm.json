@@ -1,0 +1,28 @@
+{
+    "module": [
+
+        {
+            "id": "01",
+            "code": "CS7025",
+            "name": "Programming for Digital Media",
+            "lecturer": "Joris Vreeke",
+            "credits": "10"
+        },
+
+        {
+            "id": "02",
+            "code": "CS7026",
+            "name": "Authoring for Digital Media",
+            "lecturer": "Nina Bresnihan",
+            "credits": "10"
+        },
+
+        {
+            "id": "03",
+            "code": "CS7027",
+            "name": "Contextual Media",
+            "lecturer": "Sam",
+            "credits": "10"
+        }
+    ]
+}

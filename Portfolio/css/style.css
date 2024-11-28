@@ -311,6 +311,35 @@
     padding: 0 30px;
 }
 
+
+#carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+    position: relative;
+}
+
+#image-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* ^^Ensures the entire image is visible, maintaining aspect ratio */
+}
+
+#prev,
+#next {
+    top: 50%;
+    width: 70px;
+    transform: translateY(-50%);
+    /*^ ensures they are positioned halway down*/
+    padding: 5px;
+    cursor: pointer;
+    /*^ changes the cursor when hovering over the buttons to show they are interactable*/
+}
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 

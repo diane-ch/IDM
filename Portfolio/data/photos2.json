@@ -1,0 +1,8 @@
+{
+    "images": [
+        {"image": "images/chessPawn.png"},
+        {"image": "images/rubinsVase.png"},
+        {"image": "images/centrale_logo.png"},
+        {"image": "images/BCI.png"}
+    ]
+}
