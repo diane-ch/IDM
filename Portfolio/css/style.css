@@ -311,33 +311,75 @@
     padding: 0 30px;
 }
 
-
-#carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 50%;
-    margin: auto;
+#carousel-container-programming-1,
+#carousel-container-programming-2,
+#carousel-container-programming-3,
+#carousel-container-modelling-1,
+#carousel-container-design-1 {
     position: relative;
+    display: flex;
+    flex-direction: column; /* Pour empiler l'image, la description et les flèches */
+    justify-content: center; /* Centre les éléments verticalement */
+    align-items: center; /* Centre horizontalement tous les éléments */
+    height: 400px; /* Ajustez en fonction de vos besoins */
+    text-align: center; /* Centre le texte de la description */
 }
 
-#image-display img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* ^^Ensures the entire image is visible, maintaining aspect ratio */
+#carousel-container-programming-1 img,
+#carousel-container-programming-2 img,
+#carousel-container-programming-3 img,
+#carousel-container-modelling-1 img,
+#carousel-container-design-1 img {
+    width: 60%; /* Ajustez selon votre besoin */
+    height: auto;
+    object-fit: contain; /* Maintient l'aspect ratio de l'image */
+}
+
+.image-description {
+    margin-top: 10px; /* Espace entre l'image et la description */
+    font-size: 1rem;
+    color: #333;
 }
 
 #prev,
 #next {
-    top: 50%;
-    width: 70px;
-    transform: translateY(-50%);
-    /*^ ensures they are positioned halway down*/
-    padding: 5px;
-    cursor: pointer;
-    /*^ changes the cursor when hovering over the buttons to show they are interactable*/
+    font-size: 2rem; /* Taille des flèches */
+    background: transparent; /* Pas de fond */
+    border: none; /* Pas de bordure */
+    color: #000; /* Couleur des flèches */
+    cursor: pointer; /* Curseur pointer */
+    display: inline-block; /* Les boutons restent en ligne */
+    margin: 10px 20px; /* Espace autour des flèches */
 }
+
+#prev,
+#next {
+    display: inline-block; /* Les flèches sont sur la même ligne */
+}
+
+#carousel-container-programming-1,
+#carousel-container-programming-2,
+#carousel-container-programming-3,
+#carousel-container-modelling-1,
+#carousel-container-design-1 {
+    position: relative; /* Pour que les flèches se positionnent par rapport à l'image */
+}
+
+#prev,
+#next {
+    position: absolute;
+    top: 50%; /* Positionne les flèches au centre vertical de l'image */
+    transform: translateY(-50%); /* Aligne parfaitement au centre */
+}
+
+#prev {
+    left: -40px; /* Positionne la flèche gauche */
+}
+
+#next {
+    right: -40px; /* Positionne la flèche droite */
+}
+
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

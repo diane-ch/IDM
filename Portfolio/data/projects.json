@@ -1,0 +1,109 @@
+{
+    "programming": [
+        {
+            "id-project": "programming-1",
+            "images": [
+                {
+                    "image": "images/programming/colorchecker.png",
+                    "alt": "Example of a colorchecker - tool used for color testing"
+                },
+                {
+                    "image": "images/programming/plane_graphs.png",
+                    "alt": "Plane graphs indicating the variation the reference and measured colors of a colorchecker"
+                },
+                {
+                    "image": "images/programming/LCG.png",
+                    "alt": "Graphs evaluating the local contrast gain of an image"
+                }
+            ]
+        },
+        {
+            "id-project": "programming-2",
+            "images": [
+                {
+                    "image": "images/programming/BCI.png",
+                    "alt": "Process of a Brain-Computer Interface"
+                },
+                {
+                    "image": "images/programming/chu_nantes.jpg",
+                    "alt": "Nantes University Hospital"
+                }
+                
+            ]
+        },
+        {
+            "id-project": "programming-3",
+            "images": [
+                {
+                    "image": "images/programming/crowd_simulation_2d.png",
+                    "alt":"2D simulation of a crowd exiting a room"
+                },
+                {
+                    "image": "images/programming/crowd_simulation_3d.jpg",
+                    "alt": "3D simulation of a crowd exiting a room"
+                }
+            ]
+        }
+    ],
+
+    "modelling": [
+        {
+            "id-project": "modelling-1",
+            "images": [
+                {
+                    "image": "images/modelling/full_scene.png",
+                    "alt": "3D scene - inspired by the game Cluedo"
+                },
+                {
+                    "image": "images/modelling/candlestick_texture.png",
+                    "alt": "Zoom on the candlestick - bumpy texture"
+                },
+                {
+                    "image": "images/modelling/gun.png",
+                    "alt": "Gun illuminated by a flashlight"
+                },
+                {
+                    "image": "images/modelling/pooltable.png",
+                    "alt": "Modelling of the pooltable"
+                },
+                {
+                    "image": "images/modelling/fire_zoom.png",
+                    "alt": "Zoom on the fire"
+                },
+                {
+                    "image": "images/modelling/woodlog.png",
+                    "alt": "Modelling of the wood log using a soft selection"
+                }
+            ]
+        }
+    ],
+
+    "design": [
+        {
+            "id-project": "design-1",
+            "images": [
+                {
+                    "image": "images/design/wikipedia_logo.png",
+                    "alt": "New logo of wikipedia after our rebranding"
+                },
+                {
+                    "image": "images/design/wikipedia_website.png",
+                    "alt": "Our rebranded Wikipedia website, imagined as an AI tool"
+                },
+                {
+                    "image": "images/design/wikipedia_insta.png",
+                    "alt": "Our rebranded Wikipedia Instagram page"
+                },
+                {
+                    "image": "images/design/wikipedia_jfkennedy.png",
+                    "alt": "Example of a poster for our rebranding"
+                },
+                {
+                    "image": "images/design/wikipedia_stickers.png",
+                    "alt": "Stickers"
+                }
+            ]
+        }
+    ]
+
+}
