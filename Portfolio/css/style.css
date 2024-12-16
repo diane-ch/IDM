@@ -300,84 +300,50 @@
 .project-content .a-project .project-resume ul{
     padding: 0 30px;
 }
-
-/* Size of the images */
-.project-content .a-project .project-illustration img{
-    height: 200px;
-    width: auto;
-}
-
-.project-content .a-project .project-illustration ul li{
-    padding: 0 30px;
-}
-
-#carousel-container-programming-1,
-#carousel-container-programming-2,
-#carousel-container-programming-3,
-#carousel-container-modelling-1,
-#carousel-container-design-1 {
+/* Style général pour les conteneurs de carousels */
+.carousel-container {
     position: relative;
     display: flex;
-    flex-direction: column; /* Pour empiler l'image, la description et les flèches */
-    justify-content: center; /* Centre les éléments verticalement */
-    align-items: center; /* Centre horizontalement tous les éléments */
-    height: 400px; /* Ajustez en fonction de vos besoins */
-    text-align: center; /* Centre le texte de la description */
+    flex-direction: column; /* Empile les éléments */
+    justify-content: center; /* Centre verticalement les éléments dans le conteneur */
+    align-items: center; /* Centre horizontalement les éléments */
+    text-align: center;
+    width: 100%; /* S'étend à la largeur du conteneur parent */
 }
 
-#carousel-container-programming-1 img,
-#carousel-container-programming-2 img,
-#carousel-container-programming-3 img,
-#carousel-container-modelling-1 img,
-#carousel-container-design-1 img {
-    width: 60%; /* Ajustez selon votre besoin */
-    height: auto;
+/* Ligne pour les flèches et l'image */
+.image-row {
+    display: flex; /* Affiche les flèches et l'image sur la même ligne */
+    align-items: center; /* Centre verticalement les flèches et l'image */
+    justify-content: center; /* Centre le contenu horizontalement */
+    width: 100%; /* Garde la ligne bien étendue */
+}
+
+/* Image dans le carousel */
+.image-display img {
+    height: 15rem; /* Ajustez selon votre besoin */
+    width: auto;
     object-fit: contain; /* Maintient l'aspect ratio de l'image */
+    margin: 0 20px; /* Espace entre l'image et les flèches */
 }
 
-.image-description {
-    margin-top: 10px; /* Espace entre l'image et la description */
-    font-size: 1rem;
-    color: #333;
-}
-
-#prev,
-#next {
+/* Flèches */
+button.prev,
+button.next {
     font-size: 2rem; /* Taille des flèches */
     background: transparent; /* Pas de fond */
     border: none; /* Pas de bordure */
     color: #000; /* Couleur des flèches */
     cursor: pointer; /* Curseur pointer */
-    display: inline-block; /* Les boutons restent en ligne */
-    margin: 10px 20px; /* Espace autour des flèches */
 }
 
-#prev,
-#next {
-    display: inline-block; /* Les flèches sont sur la même ligne */
-}
 
-#carousel-container-programming-1,
-#carousel-container-programming-2,
-#carousel-container-programming-3,
-#carousel-container-modelling-1,
-#carousel-container-design-1 {
-    position: relative; /* Pour que les flèches se positionnent par rapport à l'image */
-}
-
-#prev,
-#next {
-    position: absolute;
-    top: 50%; /* Positionne les flèches au centre vertical de l'image */
-    transform: translateY(-50%); /* Aligne parfaitement au centre */
-}
-
-#prev {
-    left: -40px; /* Positionne la flèche gauche */
-}
-
-#next {
-    right: -40px; /* Positionne la flèche droite */
+.image-description {
+    margin-top: 10px; /* Espace entre l'image et la description */
+    font-size: 1rem;
+    color: #333;
+    text-align: center; /* Centre le texte */
+    font-style: italic; /* Rend le texte en italique */
 }
 
 
@@ -548,6 +514,30 @@
 
 .contact-me button:hover {
     background-color: orange;
+}
+
+/* Style for the message bubble */
+.message-pop {
+    position: absolute;
+    right: 20px; /* Place the message to the right of the contact form */
+    top: 50%; /* Vertically center the bubble */
+    transform: translateY(-50%); /* Center the bubble perfectly */
+    background-color: #f1f1f1; /* Light background color */
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow to give it a bubble effect */
+    font-size: 14px;
+    max-width: 250px; /* Limit the width of the bubble */
+    text-align: center;
+    color: #333; /* Dark text color */
+    display: none; /* Initially hidden */
+    z-index: 10;
+}
+
+/* Optional: Add a transition effect for smooth appearance */
+.message-pop.show {
+    display: block;
+    animation: bubbleFadeIn 0.5s ease;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

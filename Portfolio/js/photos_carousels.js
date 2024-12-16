@@ -58,18 +58,19 @@ class Carousel {
     }
     
 
-    createCarousel() {
+   /* createCarousel() {
         // Dynamically create jQuery objects for the display and buttons
-        this.$display = $('<div class="image-display"></div>');
-        this.$description = $('<p class="image-description"></p>');  
         this.$prevButton = $('<button class="prev">&lt</button>');
+        this.$display = $('<div class="image-display"></div>');
         this.$nextButton = $('<button class="next">&gt</button>');
+        this.$description = $('<p class="image-description"></p>');  
 
         // Append dynamically created elements to the container
-        this.carouselContainer.append(this.$display);
-        this.carouselContainer.append(this.$description);
         this.carouselContainer.append(this.$prevButton);
+        this.carouselContainer.append(this.$display);
         this.carouselContainer.append(this.$nextButton);
+        this.carouselContainer.append(this.$description);
+
 
         // Display the first image
         if (this.images.length > 0) {
@@ -77,7 +78,31 @@ class Carousel {
         } else {
             console.warn(`No images found for project ${this.projectId}.`);  // important to check if the images exist, otherwise the code won't work
         }
+    }*/
+
+    createCarousel() {
+        // Créer les éléments dynamiquement
+        this.$prevButton = $('<button class="prev">&lt</button>'); // Bouton précédent
+        this.$nextButton = $('<button class="next">&gt</button>'); // Bouton suivant
+        this.$display = $('<div class="image-display"></div>'); // Conteneur pour l'image
+        this.$description = $('<p class="image-description"></p>'); // Description de l'image
+    
+        // Conteneur pour la ligne des flèches et de l'image
+        const $imageRow = $('<div class="image-row"></div>');
+        $imageRow.append(this.$prevButton, this.$display, this.$nextButton); // Ajouter les flèches et l'image à la ligne
+    
+        // Ajouter les éléments au conteneur principal
+        this.carouselContainer.append($imageRow);
+        this.carouselContainer.append(this.$description);
+    
+        // Afficher la première image
+        if (this.images.length > 0) {
+            this.updateImage();
+        } else {
+            console.warn(`No images found for project ${this.projectId}.`);
+        }
     }
+    
 
     attachEventListeners() {
         // Attach click events to the 'prev/next' buttons
