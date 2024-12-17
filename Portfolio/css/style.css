@@ -647,25 +647,25 @@ button.next {
 /* Style for the message bubble */
 .message-pop {
     position: absolute;
-    right: 20px; /* Place the message to the right of the contact form */
-    top: 50%; /* Vertically center the bubble */
-    transform: translateY(-50%); /* Center the bubble perfectly */
-    background-color: #f1f1f1; /* Light background color */
+    right: 10rem; /* Place the message to the right of the contact form */
+    top: 20rem; 
+    background-color: rgba(255, 166, 0, 0.781); 
     padding: 15px;
     border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow to give it a bubble effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow to give it a bubble effect */
     font-size: 14px;
     max-width: 250px; /* Limit the width of the bubble */
     text-align: center;
-    color: #333; /* Dark text color */
+    color: white; 
     display: none; /* Initially hidden */
     z-index: 10;
 }
 
-/* Optional: Add a transition effect for smooth appearance */
+/* Show the message when the 'show' class is added */
 .message-pop.show {
-    display: block;
-    animation: bubbleFadeIn 0.5s ease;
+    display: block; /* Change from 'none' to 'block' to show the message */
 }
+
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
