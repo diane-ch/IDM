@@ -15,6 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
     if (about_me) {
         applyTypewriterEffectIfVisible(about_me, 120);
     }
+
+    // "Contact Me" on the contact page
+    const contact_me = document.querySelector(".contact-me h1");
+    if (contact_me) {
+        applyTypewriterEffectIfVisible(contact_me, 100);
+    }
+
+    // "TIMELINE" on the education page
+    const timeline = document.querySelector(".timeline h3");
+    if (timeline) {
+        applyTypewriterEffectIfVisible(timeline, 100);
+    }
+
+    // Projects category on the projects subpages
+    const proj_cat = document.querySelector(".topic-name h1");
+    if (proj_cat) {
+        applyTypewriterEffectIfVisible(proj_cat, 100);
+    }
 });
 
 
