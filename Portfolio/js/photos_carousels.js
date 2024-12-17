@@ -58,7 +58,7 @@ class Carousel {
             const projectData = categoryData.find(p => p["id-project"] === this.projectId);
             if (projectData) {
                 // Store the images for the specific project within this category
-                this.images = projectData.images.map(img => img.image);
+                this.images = projectData.images.map(img => img.image); // Creates an array with the URL of the images only
                 this.imagesData = projectData.images;
                 console.log(`Images loaded for ${this.projectId}:`, this.images);
             } else {
@@ -72,17 +72,19 @@ class Carousel {
     // Creates the carousel by adding navigation buttons, an image display area,
     // and setting up the modal for image viewing.
     createCarousel() {
-        this.$prevButton = $('<button class="prev">&lt</button>');
+        this.$prevButton = $('<button class="prev">&lt</button>'); // The "previous" and "next" buttons are the arrows "<" and ">"
         this.$nextButton = $('<button class="next">&gt</button>');
         this.$display = $('<div class="image-display"></div>');
         this.$description = $('<p class="image-description"></p>');
 
-        const $imageRow = $('<div class="image-row"></div>');
+        const $imageRow = $('<div class="image-row"></div>'); // To keep the image and the arrows aligned on the same line
         $imageRow.append(this.$prevButton, this.$display, this.$nextButton);
 
         this.carouselContainer.append($imageRow);
         this.carouselContainer.append(this.$description);
 
+
+        // Update the image unless no images are found (then, warning message)
         if (this.images.length > 0) {
             this.updateImage();
         } else {
@@ -120,16 +122,16 @@ class Carousel {
         $(document).on("click", ".modal-next", () => this.showNextImageInModal());
     }
 
-    // Opens the modal to display the image at the current index without fading in or showing the description
+    // Opens the modal to display the image at the current index 
     openModal() {
-    const imageSrc = this.images[this.currentIndex];
+        const imageSrc = this.images[this.currentIndex];
 
-    const $modal = $("#image-modal");
-    $modal.find("img").attr("src", imageSrc); 
-    $modal.fadeIn("fast");  
+        const $modal = $("#image-modal");
+        $modal.find("img").attr("src", imageSrc); // browses to find to all the images and changes the URL to the one of the current index
+        $modal.fadeIn("fast");  
 
-    this.isModalOpen = true;
-}
+        this.isModalOpen = true;
+    }
 
     // Closes the modal
     closeModal() {
@@ -170,8 +172,8 @@ class Carousel {
         const imageAlt = this.imagesData[this.currentIndex].alt;
 
         const $modal = $("#image-modal");
-        $modal.find("img").fadeOut("slow", function () {
-            $(this).attr("src", imageSrc).attr("alt", imageAlt).fadeIn("slow");
+        $modal.find("img").fadeOut("fast", function () {
+            $(this).attr("src", imageSrc).attr("alt", imageAlt).fadeIn("fast");
         });
     }
 
@@ -192,15 +194,17 @@ class Carousel {
         const imageSrc = this.images[this.currentIndex];
         const imageAlt = this.imagesData[this.currentIndex].alt;
 
-        const $currentImg = this.$display.find("img");
+        const $currentImg = this.$display.find("img"); // Find the image in the current container ($display)
 
+        // If the image already exists (has already been displayed)
         if ($currentImg.length > 0) {
-            $currentImg.fadeOut("slow", function () {
-                $(this).attr("src", imageSrc).fadeIn("slow");
+            $currentImg.fadeOut("fast", function () {
+                $(this).attr("src", imageSrc).fadeIn("fast");
             });
-        } else {
+        } else { // If it is the first time the image is displayed
+            // the image is added and immediately hidden (display:none) so it can be displayed smoothly
             this.$display.html(`<img src="${imageSrc}" alt="${imageAlt}" style="display:none;">`);
-            this.$display.find("img").fadeIn("slow");
+            this.$display.find("img").fadeIn("fast");
         }
 
         this.$description.text(imageAlt);
