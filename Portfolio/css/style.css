@@ -300,55 +300,54 @@
 .project-content .a-project .project-resume ul{
     padding: 0 30px;
 }
-/* Style général pour les conteneurs de carousels */
+
+
 .carousel-container {
     position: relative;
     display: flex;
-    flex-direction: column; /* Empile les éléments */
-    justify-content: center; /* Centre verticalement les éléments dans le conteneur */
-    align-items: center; /* Centre horizontalement les éléments */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
-    width: 100%; /* S'étend à la largeur du conteneur parent */
+    width: 100%; 
 }
 
-/* Ligne pour les flèches et l'image */
 .image-row {
-    display: flex; /* Affiche les flèches et l'image sur la même ligne */
-    align-items: center; /* Centre verticalement les flèches et l'image */
-    justify-content: center; /* Centre le contenu horizontalement */
-    width: 100%; /* Garde la ligne bien étendue */
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
 }
 
-/* Image dans le carousel */
+
 .image-display img {
-    height: 15rem; /* Ajustez selon votre besoin */
+    height: 15rem; 
     width: auto;
-    object-fit: contain; /* Maintient l'aspect ratio de l'image */
-    margin: 0 20px; /* Espace entre l'image et les flèches */
+    object-fit: contain;
+    margin: 0 20px;
     cursor: pointer;
 }
 
-/* Flèches */
+
 button.prev,
 button.next {
-    font-size: 2rem; /* Taille des flèches */
-    background: transparent; /* Pas de fond */
-    border: none; /* Pas de bordure */
-    color: #000; /* Couleur des flèches */
-    cursor: pointer; /* Curseur pointer */
+    font-size: 2rem; 
+    background: transparent;
+    border: none; 
+    color: #000; 
+    cursor: pointer; 
 }
 
 
 .image-description {
-    margin-top: 10px; /* Espace entre l'image et la description */
+    margin-top: 10px;
     font-size: 1rem;
     color: #333;
-    text-align: center; /* Centre le texte */
-    font-style: italic; /* Rend le texte en italique */
+    text-align: center; 
+    font-style: italic; 
 }
 
 
-/* Boîte modale */
 #image-modal {
     display: none;
     position: fixed;
@@ -356,23 +355,21 @@ button.next {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fond noir semi-transparent */
+    background-color: rgba(0, 0, 0, 0.8); 
     z-index: 1000;
     justify-content: center;
     align-items: center;
 }
 
-/* Image dans la boîte modale */
 #image-modal .modal-content img {
-    height: 30rem; /* S'assurer que l'image ne dépasse pas la hauteur du conteneur */
-    width: auto; /* Éviter que l'image dépasse la largeur */
-    object-fit: contain; /* Garder les proportions de l'image */
+    height: 30rem; 
+    width: auto; 
+    object-fit: contain; 
     display: block;
     margin: auto;
     margin-top: 3rem;
 }
 
-/* Bouton de fermeture */
 #image-modal .close-modal {
     position: absolute;
     top: 10px;
@@ -391,7 +388,6 @@ button.next {
     z-index: 1001;
 }
 
-/* Flèches pour naviguer */
 #image-modal .modal-prev,
 #image-modal .modal-next {
     position: absolute;
@@ -419,61 +415,6 @@ button.next {
 }
 
 
-
-
-/*.image-modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.8); 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-}
-
-.image-modal img {
-    max-width: 90%;
-    max-height: 80%;
-    margin: auto;
-}
-
-.modal-prev, .modal-next {
-    background: rgba(0, 0, 0, 0.5); 
-    color: #fff; 
-    border: none;
-    font-size: 2rem;
-    position: absolute;
-    top: 50%; 
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 10000;
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.modal-prev:hover, .modal-next:hover {
-    background: rgba(255, 255, 255, 0.5); 
-}
-
-.modal-prev {
-    left: 10px; 
-}
-
-.modal-next {
-    right: 10px; 
-}
-
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-}
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -647,12 +588,12 @@ button.next {
 /* Style for the message bubble */
 .message-pop {
     position: absolute;
-    right: 10rem; /* Place the message to the right of the contact form */
+    right: 10rem; 
     top: 20rem; 
     background-color: rgba(255, 166, 0, 0.781); 
     padding: 15px;
     border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow to give it a bubble effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
     font-size: 14px;
     max-width: 250px; /* Limit the width of the bubble */
     text-align: center;
