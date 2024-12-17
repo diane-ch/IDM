@@ -57,58 +57,114 @@ class Carousel {
         }
     }
     
-
-   /* createCarousel() {
-        // Dynamically create jQuery objects for the display and buttons
-        this.$prevButton = $('<button class="prev">&lt</button>');
-        this.$display = $('<div class="image-display"></div>');
-        this.$nextButton = $('<button class="next">&gt</button>');
-        this.$description = $('<p class="image-description"></p>');  
-
-        // Append dynamically created elements to the container
-        this.carouselContainer.append(this.$prevButton);
-        this.carouselContainer.append(this.$display);
-        this.carouselContainer.append(this.$nextButton);
-        this.carouselContainer.append(this.$description);
-
-
-        // Display the first image
-        if (this.images.length > 0) {
-            this.updateImage();
-        } else {
-            console.warn(`No images found for project ${this.projectId}.`);  // important to check if the images exist, otherwise the code won't work
-        }
-    }*/
-
     createCarousel() {
-        // Créer les éléments dynamiquement
-        this.$prevButton = $('<button class="prev">&lt</button>'); // Bouton précédent
-        this.$nextButton = $('<button class="next">&gt</button>'); // Bouton suivant
-        this.$display = $('<div class="image-display"></div>'); // Conteneur pour l'image
-        this.$description = $('<p class="image-description"></p>'); // Description de l'image
+        this.$prevButton = $('<button class="prev">&lt</button>');
+        this.$nextButton = $('<button class="next">&gt</button>');
+        this.$display = $('<div class="image-display"></div>');
+        this.$description = $('<p class="image-description"></p>');
     
-        // Conteneur pour la ligne des flèches et de l'image
         const $imageRow = $('<div class="image-row"></div>');
-        $imageRow.append(this.$prevButton, this.$display, this.$nextButton); // Ajouter les flèches et l'image à la ligne
+        $imageRow.append(this.$prevButton, this.$display, this.$nextButton);
     
-        // Ajouter les éléments au conteneur principal
         this.carouselContainer.append($imageRow);
         this.carouselContainer.append(this.$description);
     
-        // Afficher la première image
         if (this.images.length > 0) {
             this.updateImage();
         } else {
             console.warn(`No images found for project ${this.projectId}.`);
         }
+    
+        // Ajouter la modale dynamiquement si elle n'existe pas déjà
+        if ($("#image-modal").length === 0) {
+            $("body").append(`
+                <div class="image-modal" id="image-modal" style="display: none;">
+                    <span class="close-modal">&times;</span>
+                    <button class="modal-prev">&lt;</button>
+                    <div class="modal-content">
+                        <img src="" alt="Modal Image">
+                    </div>
+                    <button class="modal-next">&gt;</button>
+                </div>
+            `);
+        }
     }
     
-
     attachEventListeners() {
-        // Attach click events to the 'prev/next' buttons
         this.$prevButton.on("click", () => this.showPreviousImage());
         this.$nextButton.on("click", () => this.showNextImage());
+    
+        // Ouvrir la modale au clic sur l'image
+        this.$display.on("click", "img", () => this.openModal());
+    
+        // Fermer la modale en cliquant sur la croix
+        $(document).on("click", ".close-modal", () => this.closeModal());
+    
+        // Fermer la modale en cliquant en dehors de l'image
+        $(document).on("click", ".image-modal", (e) => {
+            if ($(e.target).is(".image-modal")) {
+                this.closeModal();
+            }
+        });
+
+        // Écouteur clavier pour la navigation dans la modale
+        $(document).on("keydown", (e) => this.handleKeyboardNavigation(e));
+    
+        // Écouteurs pour les flèches visibles dans la modale
+        $(document).on("click", ".modal-prev", () => this.showPreviousImageInModal());
+        $(document).on("click", ".modal-next", () => this.showNextImageInModal());
     }
+    
+    openModal() {
+        const imageSrc = this.images[this.currentIndex];
+        const imageAlt = this.imagesData[this.currentIndex].alt;
+    
+        const $modal = $("#image-modal");
+        $modal.find("img").attr("src", imageSrc).attr("alt", imageAlt);
+        $modal.fadeIn("slow"); // Affiche la modale avec une animation
+    
+        this.isModalOpen = true;
+    }
+
+    
+    closeModal() {
+        $("#image-modal").fadeOut("slow"); // Cache la modale avec une animation
+        this.isModalOpen = false;
+    }
+
+    handleKeyboardNavigation(e) {
+        if (!this.isModalOpen) return; // Ne pas naviguer si la modale est fermée
+    
+        if (e.key === "ArrowLeft") {
+            this.showPreviousImageInModal();
+        } else if (e.key === "ArrowRight") {
+            this.showNextImageInModal();
+        } else if (e.key === "Escape") {
+            this.closeModal(); // Ferme la modale avec la touche Escape
+        }
+    }
+    
+    showPreviousImageInModal() {
+        this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+        this.updateModalImage();
+    }
+    
+    showNextImageInModal() {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.updateModalImage();
+    }
+    
+    updateModalImage() {
+        const imageSrc = this.images[this.currentIndex];
+        const imageAlt = this.imagesData[this.currentIndex].alt;
+    
+        const $modal = $("#image-modal");
+        $modal.find("img").fadeOut("slow", function () {
+            $(this).attr("src", imageSrc).attr("alt", imageAlt).fadeIn("slow");
+        });
+    }
+    
+    
 
     showPreviousImage() {
         // Navigate to the previous image
