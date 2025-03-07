@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config({ path: './credentials.env' }); // Load environment variables from .env file
 
 
 const DBCONFIG = {
@@ -42,22 +42,27 @@ app.get('/', (req, res) => {
     return res.json("Success!");
 });
 
+// Define a route to fetch all items from the 'items' table
+app.get('/students', (req, res) => {
+    const sql = "SELECT * FROM students"; 
+    connection.query(sql, (err, data) => { // <-- Use 'connection' instead of 'db'
+        if (err) {
+            console.error("Database query error:", err);
+            return res.status(500).json({ error: "Database query failed" });
+        }
+        return res.json(data);
+    });
+});
+
+
 // Define a route to fetch an item from the 'students' table
 app.get("/testmysql/:username", (req, res) => {
-    const query = "SELECT * FROM `students` WHERE email ='"+ req.params.username + "'";
-    console.log(query);
+    const query = "SELECT * FROM `students` WHERE email ='" + req.params.username + "'";
+    console.log(query); //you can remove this later
     connection.query(query, (err, data) => { // Execute the SQL query
         if (err) return res.json(err); // If there's an error, return the error
         return res.json(data); // Otherwise, return the data as JSON
-    });
-})
-
-app.get("/testmysqlreact/:username", (req, res) => {
-    const query = "SELECT * FROM `students` WHERE email = ?";
-    connection.query(query, [req.params.username], (err, data) => {
-        if (err) return res.json(err);
-        return res.json(data);
-    });
+    })
 });
 
 

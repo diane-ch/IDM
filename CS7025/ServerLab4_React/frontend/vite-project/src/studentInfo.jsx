@@ -9,7 +9,7 @@ function StudentInfo() {
   // Function to fetch student data
   const fetchStudent = async () => {
     try {
-      const response = await axios.get(`http://localhost:3040/testmysqlreact/${email}`);
+      const response = await axios.get(`http://localhost:3040/testmysql/${email}`);
       setStudentData(response.data);
       setError(null);
     } catch (err) {
